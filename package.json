@@ -17,16 +17,12 @@
       "renderer.js"
     ],
     "mac": {
-      "target": [
-        {
-          "target": "dmg",
-          "arch": ["x64", "arm64"]
-        }
-      ],
+      "target": "dmg",
       "category": "public.app-category.education"
     },
     "dmg": {
       "title": "NCISM Assessment Tool",
+      "format": "UDZO",
       "window": {
         "width": 540,
         "height": 380
