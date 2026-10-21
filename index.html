@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official NCISM Textbook Quality Assessment Tool for the Ministry of AYUSH Expert Committee — digitizes the 3-reviewer scoring process for ASU medical textbooks.">
+    <title>NCISM Textbook Quality Assessment Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ══════════════════ APP HEADER (Hidden during Print) ══════════════════ -->
+    <header class="header no-print">
+        <div class="header-emblem">📚</div>
+        <h1>NCISM Textbook Quality Assessment</h1>
+        <div class="header-meta">
+            <span class="header-tag">🏛️ Ministry of AYUSH</span>
+            <span class="header-tag">👥 3-Reviewer Committee System</span>
+            <span class="header-tag">📊 Problem Statement #242</span>
+        </div>
+    </header>
+
+    <!-- ══════════════════ FORM SECTION (Hidden during Print & Report) ══════════════════ -->
+    <main id="form-section" class="container no-print">
+
+        <!-- Book Metadata -->
+        <p class="section-label">📖 Book Details</p>
+        <div class="card" style="animation-delay:0s">
+            <h2><span class="icon">📘</span> Textbook Metadata</h2>
+            <div class="input-group">
+                <div class="input-wrap">
+                    <label for="bookTitle">Book Title *</label>
+                    <input type="text" id="bookTitle" placeholder="e.g. Principles of Ayurveda Vol. 2" required>
+                </div>
+                <div class="input-wrap">
+                    <label for="bookAuthor">Author(s) *</label>
+                    <input type="text" id="bookAuthor" placeholder="e.g. Dr. Sharma, Dr. Verma" required>
+                </div>
+                <div class="input-wrap">
+                    <label for="bookIsbn">ISBN (Optional)</label>
+                    <input type="text" id="bookIsbn" placeholder="978-XX-XXXX-XXX-X">
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviewer Scores -->
+        <p class="section-label">📝 Reviewer Scores (Scale: 1 – 10)</p>
+        <div class="grid-3">
+
+            <!-- Reviewer 1 -->
+            <div class="reviewer-card">
+                <div class="reviewer-header">
+                    <div class="reviewer-avatar">R1</div>
+                    <div>
+                        <h3>Reviewer 1</h3>
+                        <div class="reviewer-role">Subject Matter Expert</div>
+                    </div>
+                </div>
+
+                <div class="metric-row">
+                    <label for="r1-syl">Syllabus Coverage</label>
+                    <div class="score-input-wrap">
+                        <input type="number" id="r1-syl" min="0" max="10" value="0" oninput="clamp(this)">
+                        <span class="score-cap">/10</span>
+                    </div>
+                </div>
+                <div class="metric-row">
+                    <label for="r1-acc">Factual Accuracy</label>
+                    <div class="score-input-wrap">
+                        <input type="number" id="r1-acc" min="0" max="10" value="0" oninput="clamp(this)">
+                        <span class="score-cap">/10</span>
+                    </div>
+                </div>
+                <div class="metric-row">
+                    <label for="r1-dia">Quality of Diagrams</label>
+                    <div class="score-input-wrap">
+                        <input type="number" id="r1-dia" min="0" max="10" value="0" oninput="clamp(this)">
+                        <span class="score-cap">/10</span>
+                    </div>
+                </div>
+                <div class="metric-row">
+                    <label for="r1-lan">Clarity of Language</label>
+                    <div class="score-input-wrap">
+                        <input type="number" id="r1-lan" min="0" max="10" value="0" oninput="clamp(this)">
+                        <span class="score-cap">/10</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviewer 2 -->
+            <div class="reviewer-card">
+                <div class="reviewer-header">
+                    <div class="reviewer-avatar">R2</div>
+                    <div>
+                        <h3>Reviewer 2</h3>
+                        <div class="reviewer-role">Clinical Practitioner</div>
+                    </div>
+                </div>
+
+                <div class="metric-row">
+                    <label for="r2-syl">Syllabus Coverage</label>
+                    <div class="score-input-wrap">
+                        <input type="number" id="r2-syl" min="0" max="10" value="0" oninput="clamp(this)">
+                        <span class="score-cap">/10</span>
+                    </div>
+                </div>
+                <div class="metric-row">
+                    <label for="r2-acc">Factual Accuracy</label>
+                    <div class="score-input-wrap">
+                        <input type="number" id="r2-acc" min="0" max="10" value="0" oninput="clamp(this)">
+                        <span class="score-cap">/10</span>
+                    </div>
+                </div>
+                <div class="metric-row">
+                    <label for="r2-dia">Quality of Diagrams</label>
+                    <div class="score-input-wrap">
+                        <input type="number" id="r2-dia" min="0" max="10" value="0" oninput="clamp(this)">
+                        <span class="score-cap">/10</span>
+                    </div>
+                </div>
+                <div class="metric-row">
+                    <label for="r2-lan">Clarity of Language</label>
+                    <div class="score-input-wrap">
+                        <input type="number" id="r2-lan" min="0" max="10" value="0" oninput="clamp(this)">
+                        <span class="score-cap">/10</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviewer 3 -->
+            <div class="reviewer-card">
+                <div class="reviewer-header">
+                    <div class="reviewer-avatar">R3</div>
+                    <div>
+                        <h3>Reviewer 3</h3>
+                        <div class="reviewer-role">Academic Assessor</div>
+                    </div>
+                </div>
+
+                <div class="metric-row">
+                    <label for="r3-syl">Syllabus Coverage</label>
+                    <div class="score-input-wrap">
+                        <input type="number" id="r3-syl" min="0" max="10" value="0" oninput="clamp(this)">
+                        <span class="score-cap">/10</span>
+                    </div>
+                </div>
+                <div class="metric-row">
+                    <label for="r3-acc">Factual Accuracy</label>
+                    <div class="score-input-wrap">
+                        <input type="number" id="r3-acc" min="0" max="10" value="0" oninput="clamp(this)">
+                        <span class="score-cap">/10</span>
+                    </div>
+                </div>
+                <div class="metric-row">
+                    <label for="r3-dia">Quality of Diagrams</label>
+                    <div class="score-input-wrap">
+                        <input type="number" id="r3-dia" min="0" max="10" value="0" oninput="clamp(this)">
+                        <span class="score-cap">/10</span>
+                    </div>
+                </div>
+                <div class="metric-row">
+                    <label for="r3-lan">Clarity of Language</label>
+                    <div class="score-input-wrap">
+                        <input type="number" id="r3-lan" min="0" max="10" value="0" oninput="clamp(this)">
+                        <span class="score-cap">/10</span>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /.grid-3 -->
+
+        <button id="generate-btn" class="btn primary-btn" onclick="generateReport()">
+            ⚡ Calculate &amp; Generate Report
+        </button>
+
+    </main><!-- /#form-section -->
+
+
+    <!-- ══════════════════ REPORT SECTION ══════════════════ -->
+    <div id="report-section" style="display:none;" class="container">
+
+        <!-- Official Report Card (Designed for both Dark UI and pristine 1-page A4 PDF) -->
+        <article class="card report-card" id="printable-report">
+
+            <!-- Official Letterhead Header -->
+            <div class="official-letterhead">
+                <div class="letterhead-top">
+                    <div class="emblem-container">
+                        <span class="national-emblem">⚖️</span>
+                    </div>
+                    <div class="letterhead-text">
+                        <div class="gov-title">GOVERNMENT OF INDIA • MINISTRY OF AYUSH</div>
+                        <h1 class="authority-title">NATIONAL COMMISSION FOR INDIAN SYSTEM OF MEDICINE</h1>
+                        <div class="sub-authority">Expert Review Committee on ASU Medical Textbook Quality Assurance</div>
+                    </div>
+                </div>
+                <div class="report-badge-bar">
+                    <span class="doc-code">DOCUMENT REF: <strong id="rep-ref">NCISM/QA/2026/8941</strong></span>
+                    <span class="doc-code">ASSESSMENT PROTOCOL: <strong>PS #242 (3-REVIEWER BLIND)</strong></span>
+                    <span class="doc-code">DATE: <strong id="rep-date"></strong></span>
+                </div>
+            </div>
+
+            <!-- Book Metadata Summary Grid -->
+            <div class="report-book-info">
+                <div class="meta-row">
+                    <div class="meta-item">
+                        <span class="meta-label">TEXTBOOK TITLE</span>
+                        <span class="meta-value" id="rep-title">Book Title</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">AUTHOR(S)</span>
+                        <span class="meta-value" id="rep-author">Author Names</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">ISBN</span>
+                        <span class="meta-value" id="rep-isbn">N/A</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Score Matrix Table -->
+            <div class="table-container">
+                <table class="report-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 32%;">Assessment Metric</th>
+                            <th style="width: 14%; text-align: center;">Reviewer 1</th>
+                            <th style="width: 14%; text-align: center;">Reviewer 2</th>
+                            <th style="width: 14%; text-align: center;">Reviewer 3</th>
+                            <th style="width: 14%; text-align: center;">Average (/10)</th>
+                            <th style="width: 12%; text-align: right;">Score %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="metric-name">Syllabus Coverage</span>
+                                <span class="metric-sub">Adherence to NCISM curriculum</span>
+                            </td>
+                            <td id="r1-syl-disp" class="score-cell text-center"></td>
+                            <td id="r2-syl-disp" class="score-cell text-center"></td>
+                            <td id="r3-syl-disp" class="score-cell text-center"></td>
+                            <td id="avg-syl" class="score-cell-bold text-center"></td>
+                            <td id="pct-syl" class="score-pct text-right"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="metric-name">Factual Accuracy</span>
+                                <span class="metric-sub">Samhita citations &amp; medical validity</span>
+                            </td>
+                            <td id="r1-acc-disp" class="score-cell text-center"></td>
+                            <td id="r2-acc-disp" class="score-cell text-center"></td>
+                            <td id="r3-acc-disp" class="score-cell text-center"></td>
+                            <td id="avg-acc" class="score-cell-bold text-center"></td>
+                            <td id="pct-acc" class="score-pct text-right"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="metric-name">Quality of Diagrams</span>
+                                <span class="metric-sub">Anatomy, botany &amp; procedural clarity</span>
+                            </td>
+                            <td id="r1-dia-disp" class="score-cell text-center"></td>
+                            <td id="r2-dia-disp" class="score-cell text-center"></td>
+                            <td id="r3-dia-disp" class="score-cell text-center"></td>
+                            <td id="avg-dia" class="score-cell-bold text-center"></td>
+                            <td id="pct-dia" class="score-pct text-right"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="metric-name">Clarity of Language</span>
+                                <span class="metric-sub">Terminology, transliteration &amp; readability</span>
+                            </td>
+                            <td id="r1-lan-disp" class="score-cell text-center"></td>
+                            <td id="r2-lan-disp" class="score-cell text-center"></td>
+                            <td id="r3-lan-disp" class="score-cell text-center"></td>
+                            <td id="avg-lan" class="score-cell-bold text-center"></td>
+                            <td id="pct-lan" class="score-pct text-right"></td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>
+                                <strong class="total-title">AGGREGATE OVERALL SCORE</strong>
+                                <span class="total-sub">Cumulative assessment across all metrics</span>
+                            </td>
+                            <td colspan="3" class="total-threshold-info text-center">
+                                Passing Criterion: <strong>28.0 / 40.0 (70.0%)</strong>
+                            </td>
+                            <td class="score-total-val text-center">
+                                <span id="avg-total"></span> <span class="denom">/ 40</span>
+                            </td>
+                            <td class="score-total-pct text-right" id="pct-total"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Committee Decision & Verdict Card -->
+            <div class="verdict-wrapper">
+                <div class="verdict-banner" id="verdict-banner">
+                    <div class="verdict-status-col">
+                        <span class="verdict-tag">COMMITTEE VERDICT</span>
+                        <div id="final-badge" class="badge">APPROVED</div>
+                    </div>
+                    <div class="verdict-details-col">
+                        <div class="verdict-title" id="verdict-headline">Textbook Recommended for Syllabus Inclusion</div>
+                        <p id="final-notes" class="verdict-notes"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Official Signatures Block (Crucial for authentic government PDF) -->
+            <div class="signatures-block">
+                <div class="sig-col">
+                    <div class="sig-line"></div>
+                    <div class="sig-title">Reviewer 1</div>
+                    <div class="sig-role">Subject Matter Expert</div>
+                </div>
+                <div class="sig-col">
+                    <div class="sig-line"></div>
+                    <div class="sig-title">Reviewer 2</div>
+                    <div class="sig-role">Clinical Practitioner</div>
+                </div>
+                <div class="sig-col">
+                    <div class="sig-line"></div>
+                    <div class="sig-title">Reviewer 3</div>
+                    <div class="sig-role">Academic Assessor</div>
+                </div>
+                <div class="sig-col">
+                    <div class="sig-line"></div>
+                    <div class="sig-title">Chairperson</div>
+                    <div class="sig-role">NCISM Assessment Board</div>
+                </div>
+            </div>
+
+            <!-- Official Footer Note -->
+            <div class="official-footer-note">
+                This is a digitally generated evaluation report issued under the authority of the Expert Committee, NCISM, Ministry of AYUSH. Any discrepancy may be submitted to the Board within 15 days of issuance.
+            </div>
+
+        </article><!-- /.report-card -->
+
+        <!-- Action Buttons (hidden during print) -->
+        <div class="action-buttons no-print">
+            <button id="back-btn" class="btn secondary-btn" onclick="resetForm()">
+                ← Back to Edit Scores
+            </button>
+            <button id="pdf-btn" class="btn print-btn" onclick="window.print()">
+                🖨️ Save as Official PDF
+            </button>
+        </div>
+
+    </div><!-- /#report-section -->
+
+    <script src="renderer.js"></script>
+</body>
+</html>
