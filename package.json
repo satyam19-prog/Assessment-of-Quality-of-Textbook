@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build:mac": "electron-builder --mac"
+    "build:mac": "electron-builder --mac",
+    "build:dmg": "./build_native_dmg.sh"
   },
   "build": {
     "appId": "com.ncism.textbookassessment",
